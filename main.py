@@ -40,7 +40,7 @@ async def on_message(message):
                 invite = await user_channel.create_invite(
                     max_age=60 * 60 * 24,
                     max_uses=0,
-                    temporary=True
+                    guest=True
                 )
                 invite_url = invite.url
                 cached_invite_links[user_channel_id] = invite_url
