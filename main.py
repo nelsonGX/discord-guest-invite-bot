@@ -27,7 +27,7 @@ async def on_message(message):
     if client.user.mentioned_in(message): # type: ignore
         user = message.author
         if user.id not in vc_users:
-            await message.reply("你不在語音頻道裡!(或嘗試重新加入語音頻道)")
+            await message.reply("You are not inside a voice channel! (try to rejoin the voice channel)")
             return
         async with message.channel.typing():
             user_channel_id = vc_users[user.id]
